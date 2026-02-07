@@ -1,0 +1,30 @@
+{
+    "HomePage": {
+        "title": "Welcome to ThuRain Store",
+        "description": "Premium Hardware & Home Accessories",
+        "featured": "Featured Products",
+        "categories": "Categories",
+        "whyChooseUs": "Why Choose Us",
+        "viewAll": "View All Products"
+    },
+    "Categories": {
+        "hardware": "Hardware",
+        "decor": "Home Decor",
+        "plumbing": "Plumbing",
+        "appliances": "Appliances"
+    },
+    "Features": {
+        "quality": "Quality Assurance",
+        "qualityDesc": "We provide only the best quality materials.",
+        "delivery": "Fast Delivery",
+        "deliveryDesc": "Nationwide delivery within 3-5 business days.",
+        "support": "Expert Support",
+        "supportDesc": "24/7 customer support for all your needs."
+    },
+    "Navigation": {
+        "home": "Home",
+        "products": "Products",
+        "about": "About",
+        "contact": "Contact"
+    }
+}
