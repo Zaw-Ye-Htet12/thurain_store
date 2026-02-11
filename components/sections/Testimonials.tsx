@@ -33,7 +33,7 @@ const testimonials = [
 export function Testimonials() {
     return (
         <section className="py-24 bg-muted/30 overflow-hidden">
-            <div className="container px-4 md:px-6 mb-12 text-center">
+            <div className="container mx-auto px-4 md:px-6 mb-12 text-center">
                 <h2 className="text-3xl font-bold tracking-tight mb-4">Trusted by Professionals & Homeowners</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">Don't just take our word for it. Here is what our community has to say about their experience with ThuRain.</p>
             </div>

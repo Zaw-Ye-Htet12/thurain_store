@@ -1,111 +1,120 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
-import { Hammer, Home as HomeIcon, Droplet, Zap, ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Hammer, Home, Droplets, Zap, Ruler, Wrench, Lightbulb, HardHat } from "lucide-react";
+import { Link } from "@/i18n/routing";
 
 export function Categories() {
-    const t = useTranslations("Categories");
-
     const categories = [
         {
-            id: 'hardware',
-            icon: <Hammer className="h-12 w-12" />,
-            name: t('hardware'),
-            color: "bg-blue-500/10 text-blue-500",
-            description: "Tools for every project",
-            colSpan: "md:col-span-2 md:row-span-2"
+            id: 'tools',
+            icon: <Wrench className="h-8 w-8" />,
+            name: "Construction Tools",
+            nameMM: "ဆောက်လုပ်ရေးကိရိယာများ",
+            count: "150+ Items",
+            color: "group-hover:text-amber-500"
         },
         {
-            id: 'decor',
-            icon: <HomeIcon className="h-8 w-8" />,
-            name: t('decor'),
-            color: "bg-purple-500/10 text-purple-500",
-            description: "Modern home styling",
-            colSpan: "md:col-span-1 md:row-span-1"
+            id: 'materials',
+            icon: <Hammer className="h-8 w-8" />,
+            name: "Construction Materials",
+            nameMM: "ဆောက်လုပ်ရေးပစ္စည်းများ",
+            count: "200+ Items",
+            color: "group-hover:text-blue-500"
+        },
+        {
+            id: 'electrical',
+            icon: <Zap className="h-8 w-8" />,
+            name: "Electrical Supplies",
+            nameMM: "လျှပ်စစ်ပစ္စည်းများ",
+            count: "300+ Items",
+            color: "group-hover:text-yellow-500"
         },
         {
             id: 'plumbing',
-            icon: <Droplet className="h-8 w-8" />,
-            name: t('plumbing'),
-            color: "bg-cyan-500/10 text-cyan-500",
-            description: "Essential fixtures",
-            colSpan: "md:col-span-1 md:row-span-1"
+            icon: <Droplets className="h-8 w-8" />,
+            name: "Pipes & Fittings",
+            nameMM: "ပိုက်နှင့်ပိုက်ဆက်များ",
+            count: "100+ Items",
+            color: "group-hover:text-cyan-500"
         },
         {
             id: 'appliances',
-            icon: <Zap className="h-8 w-8" />,
-            name: t('appliances'),
-            color: "bg-amber-500/10 text-amber-500",
-            description: "Smart electronics",
-            colSpan: "md:col-span-2 md:row-span-1"
+            icon: <Home className="h-8 w-8" />,
+            name: "Home Appliances",
+            nameMM: "အိမ်သုံးပစ္စည်းများ",
+            count: "80+ Items",
+            color: "group-hover:text-purple-500"
+        },
+        {
+            id: 'lighting',
+            icon: <Lightbulb className="h-8 w-8" />,
+            name: "Lighting Solutions",
+            nameMM: "မီးသီးမီးလုံးများ",
+            count: "120+ Items",
+            color: "group-hover:text-orange-500"
+        },
+        {
+            id: 'safety',
+            icon: <HardHat className="h-8 w-8" />,
+            name: "Safety Gear",
+            nameMM: "လုပ်ငန်းခွင်ဘေးကင်းရေး",
+            count: "50+ Items",
+            color: "group-hover:text-red-500"
+        },
+        {
+            id: 'metal',
+            icon: <Ruler className="h-8 w-8" />,
+            name: "Metal Products",
+            nameMM: "သံထည်ပစ္စည်းများ",
+            count: "100+ Items",
+            color: "group-hover:text-slate-500"
         },
     ];
 
-    const container = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const item = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0 }
-    };
-
     return (
-        <section className="py-24 container px-4 md:px-6">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                <div>
-                    <h2 className="text-3xl font-bold tracking-tight mb-4">Shop by Category</h2>
-                    <p className="text-muted-foreground max-w-lg">Find exactly what you need for your next project or home improvement.</p>
+        <section className="py-24 bg-background border-t border-border/50">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="flex flex-col items-center text-center mb-16">
+                    <span className="text-primary font-mono text-xs tracking-widest uppercase mb-4 border border-primary/20 px-3 py-1 rounded-full">Our Inventory</span>
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-foreground font-display">
+                        EVERYTHING YOU NEED
+                    </h2>
+                    <p className="text-muted-foreground text-lg max-w-2xl font-light">
+                        Explore our comprehensive collection of high-quality hardware and construction materials.
+                    </p>
                 </div>
-                <Link href="/products" className="group flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors">
-                    View All Categories <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-                </Link>
-            </div>
 
-            <motion.div
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
-                className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]"
-            >
-                {categories.map((cat) => (
-                    <motion.div
-                        key={cat.id}
-                        variants={item}
-                        className={cn("group relative overflow-hidden rounded-3xl border bg-card p-6 transition-all hover:shadow-lg", cat.colSpan)}
-                    >
-                        <Link href="/products" className="absolute inset-0 z-10">
-                            <span className="sr-only">View {cat.name}</span>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    {categories.map((cat, idx) => (
+                        <Link href="/products" key={cat.id} className="group relative">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: idx * 0.05 }}
+                                viewport={{ once: true }}
+                                className="h-full bg-card hover:bg-card/50 border rounded-2xl p-6 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 overflow-hidden"
+                            >
+                                <div className={`p-4 rounded-full bg-muted group-hover:bg-muted/50 transition-colors duration-300 ${cat.color}`}>
+                                    {cat.icon}
+                                </div>
+
+                                <div>
+                                    <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">{cat.name}</h3>
+                                    <p className="text-sm font-medium text-muted-foreground/80 font-myanmar">{cat.nameMM}</p>
+                                </div>
+
+                                <div className="mt-auto pt-4 flex items-center text-xs font-semibold text-muted-foreground uppercase tracking-widest border-t w-full justify-center group-hover:border-primary/20 transition-colors">
+                                    {cat.count}
+                                </div>
+
+                                {/* Hover Glow Effect */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                            </motion.div>
                         </Link>
-
-                        <div className="flex h-full flex-col justify-between relative z-0">
-                            <div className={cn("inline-flex w-fit rounded-full p-4 transition-transform duration-300 group-hover:scale-110", cat.color)}>
-                                {cat.icon}
-                            </div>
-
-                            <div>
-                                <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">{cat.name}</h3>
-                                <p className="text-muted-foreground opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 text-sm">
-                                    {cat.description} &rarr;
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Decorative background circle */}
-                        <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-primary/5 transition-all duration-500 group-hover:scale-150" />
-                    </motion.div>
-                ))}
-            </motion.div>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 }
