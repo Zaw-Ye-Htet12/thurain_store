@@ -59,6 +59,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "Zt7PAgXrtIAcen0OkMAq83E9jOGpxcsTnIPFuxwGp7U" // Replace with your code from Google Search Console
+  },
 };
 
 import StructuredData from "@/components/seo/StructuredData";
