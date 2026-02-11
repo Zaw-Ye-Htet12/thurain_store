@@ -5,6 +5,7 @@ import { motion, useInView, useSpring, useMotionValue } from "framer-motion";
 import { Building2, Users, Package, Trophy, Handshake, Truck, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 // Animated Counter Component
 function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
@@ -95,9 +96,11 @@ const StatCard = ({
 };
 
 export function ModernStats() {
+    const t = useTranslations('ModernStats');
+
     return (
         <section className="py-24 relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
 
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
@@ -107,7 +110,7 @@ export function ModernStats() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-6xl font-bold tracking-tighter mb-4"
                         >
-                            Impact & <span className="text-primary">Scale</span>
+                            {t('title')} <span className="text-primary">{t('titleHighlight')}</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
@@ -116,7 +119,7 @@ export function ModernStats() {
                             transition={{ delay: 0.1 }}
                             className="text-muted-foreground max-w-lg text-lg font-light leading-relaxed"
                         >
-                            Measuring our commitment to quality, service, and infrastructure development through the numbers that matter.
+                            {t('subtitle')}
                         </motion.p>
                     </div>
 
@@ -127,8 +130,8 @@ export function ModernStats() {
                         className="hidden md:block mb-4"
                     >
                         <div className="text-right">
-                            <p className="text-sm font-mono text-muted-foreground mb-1">DATA UPDATED</p>
-                            <p className="font-bold text-foreground">FEB 2026</p>
+                            <p className="text-sm font-mono text-muted-foreground mb-1">{t('dataUpdated')}</p>
+                            <p className="font-bold text-foreground">{t('feb2026')}</p>
                         </div>
                     </motion.div>
                 </div>
@@ -150,8 +153,8 @@ export function ModernStats() {
 
                         <div className="relative z-10 flex justify-between items-start">
                             <div>
-                                <h3 className="font-display text-2xl font-bold mb-1">Market Leadership</h3>
-                                <p className="text-primary-foreground/80 font-light">Defining standards since 2004</p>
+                                <h3 className="font-display text-2xl font-bold mb-1">{t('marketLeadership')}</h3>
+                                <p className="text-primary-foreground/80 font-light">{t('definingStandards')}</p>
                             </div>
                             <div className="p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
                                 <Building2 className="w-6 h-6" />
@@ -162,42 +165,42 @@ export function ModernStats() {
                             <div className="text-7xl md:text-8xl font-bold tracking-tighter mb-2 flex items-baseline leading-none">
                                 <Counter value={20} suffix="+" />
                             </div>
-                            <p className="text-xl font-medium text-primary-foreground/90 max-w-sm">Years of delivering excellence in hardware solutions across Myanmar.</p>
+                            <p className="text-xl font-medium text-primary-foreground/90 max-w-sm">{t('yearsExcellence')}</p>
                         </div>
                     </motion.div>
 
                     <StatCard
-                        title="Product Catalog"
+                        title={t('productCatalog')}
                         value={1000}
                         suffix="+"
-                        description="Premium hardware items, tools, and home improvement essentials curated for professional quality."
+                        description={t('productDesc')}
                         icon={Package}
                         delay={0.2}
                     />
 
                     <StatCard
-                        title="Happy Clients"
+                        title={t('happyClients')}
                         value={5000}
                         suffix="+"
-                        description="Homeowners, contractors, and businesses who trust us for their construction projects."
+                        description={t('clientDesc')}
                         icon={Users}
                         delay={0.3}
                     />
 
                     <StatCard
-                        title="Projects Supplied"
+                        title={t('projectsSupplied')}
                         value={350}
                         suffix="+"
-                        description="Major construction and renovation projects supported across the region."
+                        description={t('projectDesc')}
                         icon={Handshake}
                         delay={0.4}
                     />
 
                     <StatCard
-                        title="Delivery Coverage"
-                        value="Coming Soon"
+                        title={t('deliveryCoverage')}
+                        value={t('deliveryComingSoon')}
                         suffix=""
-                        description="We are preparing our reliable logistics network. Updates coming shortly."
+                        description={t('deliveryDesc')}
                         icon={Truck}
                         delay={0.5}
                     />
@@ -221,19 +224,19 @@ export function ModernStats() {
                                 <div className="p-3 bg-white/20 backdrop-blur-md rounded-xl text-white">
                                     <Handshake className="w-6 h-6" />
                                 </div>
-                                <span className="text-sm font-semibold uppercase tracking-wider text-white/90">Join Our Network</span>
+                                <span className="text-sm font-semibold uppercase tracking-wider text-white/90">{t('joinNetwork')}</span>
                             </div>
 
                             <h3 className="text-3xl md:text-3xl font-bold mb-3 leading-tight">
-                                Partner & Distribute <br /><span className="text-white/70">With Us</span>
+                                {t('partnerDistribute')} <br /><span className="text-white/70">{t('withUs')}</span>
                             </h3>
 
                             <p className="text-white/80 max-w-md mb-6 font-light text-sm md:text-base">
-                                Expand your business reach by partnering with Myanmar's leading hardware supplier. Let's build the future together.
+                                {t('partnerDesc')}
                             </p>
 
                             <button className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-white/80 transition-colors group/btn">
-                                Collaborate Now <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                {t('collaborateNow')} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                             </button>
                         </div>
                     </motion.div>

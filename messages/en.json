@@ -8,23 +8,255 @@
         "viewAll": "View All Products"
     },
     "Categories": {
-        "hardware": "Hardware",
-        "decor": "Home Decor",
-        "plumbing": "Plumbing",
-        "appliances": "Appliances"
+        "sectionTitle": "Our Inventory",
+        "title": "EVERYTHING YOU NEED",
+        "description": "Explore our comprehensive collection of high-quality hardware and construction materials.",
+        "items": {
+            "tools": {
+                "name": "Construction Tools",
+                "sub": "ဆောက်လုပ်ရေးကိရိယာများ",
+                "count": "150+ Items"
+            },
+            "materials": {
+                "name": "Construction Materials",
+                "sub": "ဆောက်လုပ်ရေးပစ္စည်းများ",
+                "count": "200+ Items"
+            },
+            "electrical": {
+                "name": "Electrical Supplies",
+                "sub": "လျှပ်စစ်ပစ္စည်းများ",
+                "count": "300+ Items"
+            },
+            "plumbing": {
+                "name": "Pipes & Fittings",
+                "sub": "ပိုက်နှင့်ပိုက်ဆက်များ",
+                "count": "100+ Items"
+            },
+            "appliances": {
+                "name": "Home Appliances",
+                "sub": "အိမ်သုံးပစ္စည်းများ",
+                "count": "80+ Items"
+            },
+            "lighting": {
+                "name": "Lighting Solutions",
+                "sub": "မီးသီးမီးလုံးများ",
+                "count": "120+ Items"
+            },
+            "safety": {
+                "name": "Safety Gear",
+                "sub": "လုပ်ငန်းခွင်ဘေးကင်းရေး",
+                "count": "50+ Items"
+            },
+            "metal": {
+                "name": "Metal Products",
+                "sub": "သံထည်ပစ္စည်းများ",
+                "count": "100+ Items"
+            }
+        }
     },
-    "Features": {
-        "quality": "Quality Assurance",
-        "qualityDesc": "We provide only the best quality materials.",
-        "delivery": "Fast Delivery",
-        "deliveryDesc": "Nationwide delivery within 3-5 business days.",
-        "support": "Expert Support",
-        "supportDesc": "24/7 customer support for all your needs."
+    "Services": {
+        "whyChooseUs": "// Why Choose Us",
+        "redefining": "Redefining",
+        "serviceStandards": "Service Standards.",
+        "description": "Quality hardware, unbeatable prices, and a shopping experience designed for the modern era.",
+        "highQuality": {
+            "title": "High Quality Standards",
+            "desc": "We refuse to compromise. Every product in our catalog is vetted for durability and professional-grade performance."
+        },
+        "lowPrice": {
+            "title": "Always Low Price",
+            "desc": "Direct importer status allows us to cut out middlemen and pass the savings directly to you. Fair pricing, guaranteed."
+        },
+        "expert": {
+            "title": "Expert Consultation",
+            "desc": "Not sure what you need? Our veteran team provides free technical advice to ensure your project succeeds."
+        },
+        "beta": "Beta Access",
+        "onlineStore": "ONLINE STORE",
+        "comingSoon": "COMING SOON",
+        "waitlist": "We are building the most advanced hardware e-commerce platform in Myanmar. Join the waitlist for exclusive early access and launch discounts.",
+        "placeholder": "Enter your email address",
+        "join": "Join Waitlist",
+        "benefits": {
+            "priority": "Priority Access",
+            "exclusive": "Exclusive Discounts",
+            "updates": "Launch Updates"
+        }
+    },
+    "VisionMission": {
+        "tag": "Future Focused",
+        "purpose": "Purpose",
+        "our": "Our",
+        "desc": "Redefining the standards of hardware and home improvement through innovation, quality, and sustainable practices.",
+        "vision": {
+            "title": "Our Vision",
+            "desc": "To be the premier destination for high-quality hardware and home improvement solutions in Myanmar, recognized for our commitment to innovation, sustainability, and customer excellence.",
+            "explore": "Explore Strategy"
+        },
+        "mission": {
+            "title": "Our Mission",
+            "p1": "Provide a comprehensive range of genuine, durable products.",
+            "p2": "Offer expert advice and exceptional service to every customer.",
+            "p3": "Contribute to the modernization of Myanmar's infrastructure."
+        }
+    },
+    "Contact": {
+        "tag": "// Contact",
+        "title": "LET'S START A",
+        "subtitle": "CONVERSATION",
+        "desc": "Ready to upgrade your space? Get in touch for quotes, collaborations, or just to say hello.",
+        "methods": {
+            "chat": "Chat with us",
+            "chatVal": "Start a WhatsApp Chat",
+            "call": "Call Directly",
+            "email": "Email Inquiries",
+            "visit": "Visit Showroom"
+        },
+        "form": {
+            "title": "Send a Message",
+            "name": "Name",
+            "phone": "Phone",
+            "email": "Email (Optional)",
+            "message": "Message",
+            "submit": "Send Request",
+            "reply": "Typically replies within 2 hours during business hours.",
+            "placeholders": {
+                "name": "John Doe",
+                "phone": "+95 ...",
+                "email": "john@example.com",
+                "message": "Tell us about your project..."
+            }
+        }
+    },
+    "Locations": {
+        "tag": "// Our Network",
+        "title": "Find Us",
+        "highlight": "Nearby",
+        "desc": "Strategic locations across Yangon to serve your hardware needs with speed and efficiency.",
+        "branch": "BRANCH",
+        "directions": "Get Directions",
+        "address": "Address",
+        "hours": "Daily: 8:00 AM - 5:30 PM",
+        "thamine": {
+            "name": "Thamine Branch",
+            "address": "No. 123, Thamine Main Road, Mayangone Township, Yangon"
+        },
+        "kyimyindaing": {
+            "name": "Kyimyindaing Branch",
+            "address": "No. 456, Lower Kyimyindaing Road, Kyimyindaing Township, Yangon"
+        }
+    },
+    "AboutStory": {
+        "tag": "// The Blueprint",
+        "title": "CRAFTING",
+        "subtitle": "THE FUTURE",
+        "roots": {
+            "year": "ROOTS",
+            "title": "Physical Presence",
+            "desc": "Built on trust with two active physical locations, serving our community personally."
+        },
+        "now": {
+            "year": "NOW",
+            "title": "Digital Evolution",
+            "desc": "Expanding beyond borders. Launching our comprehensive online store in just a few months."
+        },
+        "vision": {
+            "year": "VISION",
+            "title": "The Standard",
+            "desc": "Premium quality goods at accessible prices. High-end products for every customer."
+        },
+        "fullStory": "Full Story",
+        "status": "Sys.Status: Optimal",
+        "project": "PROJECT: THURAIN",
+        "quote": "Premium quality. Unbeatable value."
+    },
+    "Testimonials": {
+        "title": "Trusted by Professionals & Homeowners",
+        "desc": "Don't just take our word for it. Here is what our community has to say about their experience with ThuRain.",
+        "role": {
+            "homeowner": "Homeowner",
+            "designer": "Interior Designer",
+            "contractor": "Contractor",
+            "diy": "DIY Enthusiast"
+        },
+        "t1": "The quality of the hardware tools I bought was exceptional. Delivery was fast and the packaging was secure. Highly recommended!",
+        "t2": "I source most of my decor items from ThuRain. Their collection is unique and modern, perfect for my clients.",
+        "t3": "Reliable service and great prices. The bulk ordering process is smooth and the team is very responsive.",
+        "t4": "Love the variety of products! Found everything I needed for my weekend renovation project."
     },
     "Navigation": {
         "home": "Home",
         "products": "Products",
         "about": "About",
         "contact": "Contact"
+    },
+    "Hero": {
+        "est": "Est. 2004 • Yangon",
+        "selling": "SELLING",
+        "highEndProducts": "HIGH-END PRODUCTS",
+        "description": "Your trusted partner for premium construction materials and hardware solutions. Operating with excellence for over two decades.",
+        "exploreCatalog": "EXPLORE CATALOG",
+        "getQuote": "Get a Quote",
+        "scrollToDiscover": "Scroll to discover"
+    },
+    "ModernStats": {
+        "title": "Impact &",
+        "titleHighlight": "Scale",
+        "subtitle": "Measuring our commitment to quality, service, and infrastructure development through the numbers that matter.",
+        "dataUpdated": "DATA UPDATED",
+        "feb2026": "FEB 2026",
+        "marketLeadership": "Market Leadership",
+        "definingStandards": "Defining standards since 2004",
+        "yearsExcellence": "Years of delivering excellence in hardware solutions across Myanmar.",
+        "productCatalog": "Product Catalog",
+        "productDesc": "Premium hardware items, tools, and home improvement essentials curated for professional quality.",
+        "happyClients": "Happy Clients",
+        "clientDesc": "Homeowners, contractors, and businesses who trust us for their construction projects.",
+        "projectsSupplied": "Projects Supplied",
+        "projectDesc": "Major construction and renovation projects supported across the region.",
+        "deliveryCoverage": "Delivery Coverage",
+        "deliveryDesc": "We are preparing our reliable logistics network. Updates coming shortly.",
+        "deliveryComingSoon": "Coming Soon",
+        "joinNetwork": "Join Our Network",
+        "partnerDistribute": "Partner & Distribute",
+        "withUs": "With Us",
+        "partnerDesc": "Expand your business reach by partnering with Myanmar's leading hardware supplier. Let's build the future together.",
+        "collaborateNow": "Collaborate Now"
+    },
+    "FeaturedProducts": {
+        "tag": "// Curated Collection",
+        "title": "Featured",
+        "highlight": "Essentials",
+        "addToCart": "Add to Cart",
+        "viewAll": "View Full Collection"
+    },
+    "ProductGrid": {
+        "title": "Our",
+        "highlight": "Products",
+        "desc": "Browse our extensive catalog of high-quality tools and materials designed for modern construction.",
+        "search": "Search products...",
+        "noProducts": "No products found",
+        "noProductsDesc": "We couldn't find any products matching your search criteria. Try adjusting your search or filters.",
+        "clearFilters": "Clear all filters",
+        "addToCart": "Add to Cart",
+        "categories": {
+            "All": "All",
+            "Tools": "Tools",
+            "Lighting": "Lighting",
+            "Plumbing": "Plumbing",
+            "Electrical": "Electrical",
+            "Safety": "Safety",
+            "Machinery": "Machinery"
+        }
+    },
+    "Footer": {
+        "rights": "All rights reserved."
+    },
+    "Badges": {
+        "Best Seller": "Best Seller",
+        "New": "New",
+        "Sale": "Sale",
+        "Reliable": "Reliable",
+        "Heavy Duty": "Heavy Duty"
     }
 }

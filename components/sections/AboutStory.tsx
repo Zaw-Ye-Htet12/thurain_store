@@ -6,10 +6,12 @@ import { ArrowRight, Box, Layers, Zap, Hexagon } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { useRef } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 // Font variants are handled via CSS classes defined in globals.css: font-sans, font-display, font-mono
 
 export function AboutStory() {
+    const t = useTranslations('AboutStory');
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -18,9 +20,30 @@ export function AboutStory() {
 
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
+    const timelineItems = [
+        {
+            year: t('roots.year'),
+            title: t('roots.title'),
+            desc: t('roots.desc'),
+            icon: Box
+        },
+        {
+            year: t('now.year'),
+            title: t('now.title'),
+            desc: t('now.desc'),
+            icon: Layers
+        },
+        {
+            year: t('vision.year'),
+            title: t('vision.title'),
+            desc: t('vision.desc'),
+            icon: Zap
+        }
+    ];
+
     return (
         <section ref={containerRef} className="py-32 relative overflow-hidden bg-background">
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                     {/* Left Column: Fast-read Content */}
@@ -32,36 +55,17 @@ export function AboutStory() {
                             transition={{ duration: 0.8 }}
                         >
                             <div className="flex items-center gap-4 mb-6">
-                                <span className="font-mono text-xs uppercase tracking-widest text-primary">// The Blueprint</span>
+                                <span className="font-mono text-xs uppercase tracking-widest text-primary">{t('tag')}</span>
                             </div>
 
                             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12 leading-[0.9]">
-                                CRAFTING <br />
-                                <span className="text-muted-foreground">THE FUTURE</span>
+                                {t('title')} <br />
+                                <span className="text-muted-foreground">{t('subtitle')}</span>
                             </h2>
                         </motion.div>
 
                         <div className="space-y-12 relative pl-4 border-l border-neutral-200 dark:border-neutral-800">
-                            {[
-                                {
-                                    year: "ROOTS",
-                                    title: "Physical Presence",
-                                    desc: "Built on trust with two active physical locations, serving our community personally.",
-                                    icon: Box
-                                },
-                                {
-                                    year: "NOW",
-                                    title: "Digital Evolution",
-                                    desc: "Expanding beyond borders. Launching our comprehensive online store in just a few months.",
-                                    icon: Layers
-                                },
-                                {
-                                    year: "VISION",
-                                    title: "The Standard",
-                                    desc: "Premium quality goods at accessible prices. High-end products for every customer.",
-                                    icon: Zap
-                                }
-                            ].map((item, i) => (
+                            {timelineItems.map((item, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, x: -20 }}
@@ -92,7 +96,7 @@ export function AboutStory() {
                         >
                             <Button asChild className="rounded-full h-12 px-8 text-sm uppercase tracking-widest font-semibold group">
                                 <Link href="/about">
-                                    Full Story <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                    {t('fullStory')} <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </Button>
                         </motion.div>
@@ -114,13 +118,13 @@ export function AboutStory() {
 
                             <div className="absolute top-6 left-6 z-20 flex items-center gap-2">
                                 <Hexagon className="w-5 h-5 text-white/90 animate-pulse" />
-                                <span className="font-mono text-[10px] text-white/70 uppercase tracking-widest">Sys.Status: Optimal</span>
+                                <span className="font-mono text-[10px] text-white/70 uppercase tracking-widest">{t('status')}</span>
                             </div>
 
                             <div className="absolute bottom-10 left-8 right-8 z-20 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <p className="font-mono text-xs text-primary mb-2">PROJECT: THURAIN</p>
+                                <p className="font-mono text-xs text-primary mb-2">{t('project')}</p>
                                 <p className="text-3xl font-bold leading-tight">
-                                    Premium quality. Unbeatable value.
+                                    {t('quote')}
                                 </p>
                             </div>
 

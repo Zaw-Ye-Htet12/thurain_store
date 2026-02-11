@@ -5,7 +5,7 @@ export default async function AboutPage() {
     const t = await getTranslations('Navigation');
 
     return (
-        <div className="container py-16 mx-auto px-4">
+        <div className="container py-16 mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
             <FadeIn className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold mb-8 tracking-tight">{t('about')} ThuRain</h1>
                 <div className="prose dark:prose-invert prose-lg text-muted-foreground">

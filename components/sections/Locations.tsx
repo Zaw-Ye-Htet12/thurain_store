@@ -4,31 +4,34 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Navigation, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
-const locations = [
-    {
-        id: "thamine",
-        name: "Thamine Branch",
-        nameMm: "သမိုင်းမြို့နယ် ဆိုင်ခွဲ",
-        address: "No. 123, Thamine Main Road, Mayangone Township, Yangon",
-        phone: "09-43161917, 09-773104526",
-        hours: "Daily: 8:00 AM - 5:30 PM",
-        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop", // Modern building
-        mapLink: "https://maps.app.goo.gl/E9SnVEkmZbGw9Z9NA"
-    },
-    {
-        id: "kyimyindaing",
-        name: "Kyimyindaing Branch",
-        nameMm: "ကြည့်မြင်တိုင်မြို့နယ် ဆိုင်ခွဲ",
-        address: "No. 456, Lower Kyimyindaing Road, Kyimyindaing Township, Yangon",
-        phone: "09-112233445, 09-554433221",
-        hours: "Daily: 8:00 AM - 5:30 PM",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop", // Interior/Office vibe
-        mapLink: "https://maps.app.goo.gl/zaPnbAKgcdzs8hrp6"
-    }
-];
+import { useTranslations } from "next-intl";
 
 export function Locations() {
+    const t = useTranslations('Locations');
+
+    const locations = [
+        {
+            id: "thamine",
+            name: t('thamine.name'),
+            nameMm: "သမိုင်းမြို့နယ် ဆိုင်ခွဲ",
+            address: t('thamine.address'),
+            phone: "09-43161917, 09-773104526",
+            hours: t('hours'),
+            image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop", // Modern building
+            mapLink: "https://maps.app.goo.gl/E9SnVEkmZbGw9Z9NA"
+        },
+        {
+            id: "kyimyindaing",
+            name: t('kyimyindaing.name'),
+            nameMm: "ကြည့်မြင်တိုင်မြို့နယ် ဆိုင်ခွဲ",
+            address: t('kyimyindaing.address'),
+            phone: "09-112233445, 09-554433221",
+            hours: t('hours'),
+            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop", // Interior/Office vibe
+            mapLink: "https://maps.app.goo.gl/zaPnbAKgcdzs8hrp6"
+        }
+    ];
+
     return (
         <section className="py-32 bg-background relative overflow-hidden">
             {/* Background Texture */}
@@ -37,7 +40,7 @@ export function Locations() {
                 backgroundSize: '32px 32px'
             }}></div>
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                     <div className="max-w-2xl">
                         <motion.span
@@ -46,7 +49,7 @@ export function Locations() {
                             viewport={{ once: true }}
                             className="text-primary font-mono text-xs font-bold tracking-widest uppercase mb-4 block"
                         >
-                            // Our Network
+                            {t('tag')}
                         </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +58,7 @@ export function Locations() {
                             transition={{ delay: 0.1 }}
                             className="text-4xl md:text-6xl font-bold tracking-tighter"
                         >
-                            Find Us <span className="text-muted-foreground">Nearby</span>
+                            {t('title')} <span className="text-muted-foreground">{t('highlight')}</span>
                         </motion.h2>
                     </div>
 
@@ -66,7 +69,7 @@ export function Locations() {
                         transition={{ delay: 0.2 }}
                         className="text-muted-foreground max-w-sm md:text-right text-left"
                     >
-                        Strategic locations across Yangon to serve your hardware needs with speed and efficiency.
+                        {t('desc')}
                     </motion.p>
                 </div>
 
@@ -96,7 +99,7 @@ export function Locations() {
                                 <div className="transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
                                     <div className="flex items-center justify-between mb-2">
                                         <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-mono font-medium border border-white/10">
-                                            BRANCH 0{index + 1}
+                                            {t('branch')} 0{index + 1}
                                         </span>
                                         <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                             <Button size="icon" variant="ghost" className="h-8 w-8 rounded-full bg-white/10 hover:bg-white/20 text-white">
@@ -126,13 +129,13 @@ export function Locations() {
                                             </div>
                                             <div className="flex items-center gap-3">
                                                 <Clock className="h-4 w-4 text-white/70" />
-                                                <span className="text-sm text-white/90">8:00 AM - 5:30 PM</span>
+                                                <span className="text-sm text-white/90">{loc.hours}</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <Button className="w-full bg-white text-black hover:bg-white/90 rounded-xl py-6 font-semibold tracking-wide">
-                                        <Navigation className="mr-2 h-4 w-4" /> Get Directions
+                                        <Navigation className="mr-2 h-4 w-4" /> {t('directions')}
                                     </Button>
                                 </div>
                             </div>

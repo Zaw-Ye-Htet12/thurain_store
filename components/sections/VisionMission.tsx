@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Target, Telescope, ArrowUpRight, Lightbulb, Rocket, Globe2, Sparkles } from "lucide-react";
 import DecryptedText from "@/components/bits/DecryptedText";
+import { useTranslations } from "next-intl";
 
 // Spotlight Effect Component
 const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
@@ -49,6 +50,7 @@ const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode
 
 
 export function VisionMission() {
+    const t = useTranslations('VisionMission');
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -66,7 +68,7 @@ export function VisionMission() {
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
                 <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -75,11 +77,11 @@ export function VisionMission() {
                         className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium uppercase tracking-wider mb-6"
                     >
                         <Sparkles className="w-3 h-3" />
-                        <span>Future Focused</span>
+                        <span>{t('tag')}</span>
                     </motion.div>
 
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50">
-                        Our <DecryptedText text="Purpose" animateOn="view" className="text-primary inline-block" />
+                        {t('our')} <DecryptedText text={t('purpose')} animateOn="view" className="text-primary inline-block" />
                     </h2>
 
                     <motion.p
@@ -89,7 +91,7 @@ export function VisionMission() {
                         transition={{ delay: 0.1 }}
                         className="text-muted-foreground max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed"
                     >
-                        Redefining the standards of hardware and home improvement through innovation, quality, and sustainable practices.
+                        {t('desc')}
                     </motion.p>
                 </div>
 
@@ -106,14 +108,14 @@ export function VisionMission() {
                                 <div className="w-14 h-14 mb-8 rounded-2xl bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center text-primary border border-neutral-200 dark:border-neutral-700 shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
                                     <Telescope className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-3xl font-display font-bold mb-4 tracking-tight group-hover:text-primary transition-colors">Our Vision</h3>
+                                <h3 className="text-3xl font-display font-bold mb-4 tracking-tight group-hover:text-primary transition-colors">{t('vision.title')}</h3>
                                 <p className="text-muted-foreground text-lg leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                                    To be the premier destination for high-quality hardware and home improvement solutions in Myanmar, recognized for our commitment to innovation, sustainability, and customer excellence.
+                                    {t('vision.desc')}
                                 </p>
                             </div>
 
                             <div className="mt-12 flex items-center text-primary font-medium opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                                <span className="mr-2 border-b border-primary/0 group-hover:border-primary transition-all">Explore Strategy</span>
+                                <span className="mr-2 border-b border-primary/0 group-hover:border-primary transition-all">{t('vision.explore')}</span>
                                 <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </div>
                         </SpotlightCard>
@@ -134,12 +136,12 @@ export function VisionMission() {
                                 <div className="w-14 h-14 mb-8 rounded-2xl bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center text-blue-600 border border-neutral-200 dark:border-neutral-700 shadow-sm group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
                                     <Rocket className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-3xl font-display font-bold mb-4 tracking-tight group-hover:text-blue-600 transition-colors">Our Mission</h3>
+                                <h3 className="text-3xl font-display font-bold mb-4 tracking-tight group-hover:text-blue-600 transition-colors">{t('mission.title')}</h3>
                                 <ul className="space-y-6">
                                     {[
-                                        { icon: Target, text: "Provide a comprehensive range of genuine, durable products." },
-                                        { icon: Lightbulb, text: "Offer expert advice and exceptional service to every customer." },
-                                        { icon: Globe2, text: "Contribute to the modernization of Myanmar's infrastructure." }
+                                        { icon: Target, text: t('mission.p1') },
+                                        { icon: Lightbulb, text: t('mission.p2') },
+                                        { icon: Globe2, text: t('mission.p3') }
                                     ].map((item, idx) => (
                                         <li key={idx} className="flex items-start gap-4 group/item">
                                             <div className="mt-1 p-1 bg-primary/10 rounded-md text-primary group-hover/item:bg-primary group-hover/item:text-primary-foreground transition-colors">

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, Mail, MapPin, Phone, MessageSquare, ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const ContactMethod = ({ icon: Icon, label, value, href }: { icon: any, label: string, value: string, href: string }) => (
     <a
@@ -25,12 +26,14 @@ const ContactMethod = ({ icon: Icon, label, value, href }: { icon: any, label: s
 )
 
 export function Contact() {
+    const t = useTranslations('Contact');
+
     return (
         <section className="py-32 bg-background relative overflow-hidden">
             {/* Subtle noise texture */}
             <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none" />
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
                     {/* Left Column: Typography & Info */}
@@ -42,39 +45,39 @@ export function Contact() {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="block text-sm font-mono tracking-widest uppercase mb-6 text-muted-foreground">
-                                // Contact
+                                {t('tag')}
                             </span>
                             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[0.9]">
-                                LET'S START A <br />
-                                <span className="text-muted-foreground/50">CONVERSATION</span>
+                                {t('title')} <br />
+                                <span className="text-muted-foreground/50">{t('subtitle')}</span>
                             </h2>
                             <p className="text-xl text-muted-foreground font-light max-w-md mb-12 leading-relaxed">
-                                Ready to upgrade your space? Get in touch for quotes, collaborations, or just to say hello.
+                                {t('desc')}
                             </p>
                         </motion.div>
 
                         <div className="space-y-2">
                             <ContactMethod
                                 icon={MessageSquare}
-                                label="Chat with us"
-                                value="Start a WhatsApp Chat"
+                                label={t('methods.chat')}
+                                value={t('methods.chatVal')}
                                 href="https://wa.me/0814085141"
                             />
                             <ContactMethod
                                 icon={Phone}
-                                label="Call Directly"
+                                label={t('methods.call')}
                                 value="+95 9 769 808 227"
                                 href="tel:+959769808227"
                             />
                             <ContactMethod
                                 icon={Mail}
-                                label="Email Inquiries"
+                                label={t('methods.email')}
                                 value="thurainstoreofficial@gmail.com"
                                 href="mailto:thurainstoreofficial@gmail.com"
                             />
                             <ContactMethod
                                 icon={MapPin}
-                                label="Visit Showroom"
+                                label={t('methods.visit')}
                                 value="No.20, 1st Floor, Bandarpin street, Yangon, Myanmar"
                                 href="https://maps.app.goo.gl/R12uem4CEKxLJiup7"
                             />
@@ -90,57 +93,57 @@ export function Contact() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="bg-neutral-50 dark:bg-neutral-900/50 p-8 md:p-12 rounded-[2rem] border border-neutral-200 dark:border-neutral-800"
                         >
-                            <h3 className="text-2xl font-bold mb-8">Send a Message</h3>
+                            <h3 className="text-2xl font-bold mb-8">{t('form.title')}</h3>
 
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2 group">
-                                        <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">Name</label>
+                                        <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">{t('form.name')}</label>
                                         <div className="relative">
                                             <Input
                                                 className="bg-transparent border-0 border-b border-neutral-300 dark:border-neutral-700 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/30 text-lg h-auto"
-                                                placeholder="John Doe"
+                                                placeholder={t('form.placeholders.name')}
                                             />
                                         </div>
                                     </div>
                                     <div className="space-y-2 group">
-                                        <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">Phone</label>
+                                        <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">{t('form.phone')}</label>
                                         <div className="relative">
                                             <Input
                                                 className="bg-transparent border-0 border-b border-neutral-300 dark:border-neutral-700 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/30 text-lg h-auto"
-                                                placeholder="+95 ..."
+                                                placeholder={t('form.placeholders.phone')}
                                             />
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="space-y-2 group">
-                                    <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">Email (Optional)</label>
+                                    <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">{t('form.email')}</label>
                                     <div className="relative">
                                         <Input
                                             className="bg-transparent border-0 border-b border-neutral-300 dark:border-neutral-700 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/30 text-lg h-auto"
-                                            placeholder="john@example.com"
+                                            placeholder={t('form.placeholders.email')}
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2 group">
-                                    <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">Message</label>
+                                    <label className="text-xs uppercase tracking-widest text-muted-foreground group-focus-within:text-foreground transition-colors">{t('form.message')}</label>
                                     <div className="relative">
                                         <Textarea
                                             className="bg-transparent border-0 border-b border-neutral-300 dark:border-neutral-700 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/30 text-lg min-h-[100px] resize-none shadow-none"
-                                            placeholder="Tell us about your project..."
+                                            placeholder={t('form.placeholders.message')}
                                         />
                                     </div>
                                 </div>
 
                                 <div className="pt-4">
                                     <Button size="lg" className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full h-14 text-lg group">
-                                        <span className="mr-2">Send Request</span>
+                                        <span className="mr-2">{t('form.submit')}</span>
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </Button>
                                     <p className="text-center text-xs text-muted-foreground mt-4">
-                                        Typically replies within 2 hours during business hours.
+                                        {t('form.reply')}
                                     </p>
                                 </div>
                             </form>

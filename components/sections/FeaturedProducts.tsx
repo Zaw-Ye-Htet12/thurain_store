@@ -51,12 +51,15 @@ const products = [
 const categories = ["All", "Tools", "Lighting", "Plumbing", "Electrical"];
 
 export function FeaturedProducts() {
-    const t = useTranslations("HomePage");
+    const t = useTranslations("FeaturedProducts");
+    const tGrid = useTranslations("ProductGrid");
+    const tBadges = useTranslations("Badges");
+
     const [activeTab, setActiveTab] = useState("All");
 
     return (
         <section className="py-24 md:py-32 bg-background w-full">
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
 
                 {/* Header & Tabs */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
@@ -67,7 +70,7 @@ export function FeaturedProducts() {
                             viewport={{ once: true }}
                             className="text-primary font-mono text-xs font-bold tracking-widest uppercase mb-4 block"
                         >
-                            // Curated Collection
+                            {t('tag')}
                         </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +79,7 @@ export function FeaturedProducts() {
                             transition={{ delay: 0.1 }}
                             className="text-4xl md:text-5xl font-bold tracking-tight mb-4"
                         >
-                            Featured <span className="text-muted-foreground">Essentials</span>
+                            {t('title')} <span className="text-muted-foreground">{t('highlight')}</span>
                         </motion.h2>
                     </div>
 
@@ -94,7 +97,7 @@ export function FeaturedProducts() {
                                     : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
                                     }`}
                             >
-                                {cat}
+                                {tGrid(`categories.${cat}`)}
                             </motion.button>
                         ))}
                     </div>
@@ -115,7 +118,7 @@ export function FeaturedProducts() {
                             <div className="aspect-[4/5] relative overflow-hidden bg-secondary/20">
                                 {product.badge && (
                                     <span className="absolute top-4 left-4 z-20 px-3 py-1 bg-white/90 dark:bg-black/90 backdrop-blur text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
-                                        {product.badge}
+                                        {tBadges(product.badge as any)}
                                     </span>
                                 )}
 
@@ -131,9 +134,9 @@ export function FeaturedProducts() {
                                 />
 
                                 {/* Quick Add Overlay */}
-                                <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                                <div className="absolute inset-x-0 bottom-0 p-4 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 z-20">
                                     <Button className="w-full rounded-xl shadow-lg gap-2">
-                                        <ShoppingBag className="w-4 h-4" /> Add to Cart
+                                        <ShoppingBag className="w-4 h-4" /> {t('addToCart')}
                                     </Button>
                                 </div>
                             </div>
@@ -157,7 +160,7 @@ export function FeaturedProducts() {
                 <div className="mt-16 text-center">
                     <Button variant="outline" size="lg" asChild className="rounded-full px-8 hover:bg-primary hover:text-primary-foreground group transition-all duration-300">
                         <Link href="/products">
-                            View Full Collection <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                            {t('viewAll')} <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
                         </Link>
                     </Button>
                 </div>

@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { ArrowRight, Hammer, Phone, ChevronRight } from "lucide-react";
 import DecryptedText from "@/components/bits/DecryptedText";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+    const t = useTranslations('Hero');
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollY } = useScroll();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,7 +47,7 @@ export function Hero() {
                 className="absolute bottom-[10%] left-[10%] w-[400px] h-[400px] bg-primary/50 rounded-full blur-[100px]"
             />
 
-            <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 flex flex-col items-center text-center">
 
                 {/* Modern Badge */}
                 <motion.div
@@ -59,7 +61,7 @@ export function Hero() {
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                     </span>
                     <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-primary transition-colors">
-                        Est. 2004 • Yangon
+                        {t('est')}
                     </span>
                 </motion.div>
 
@@ -67,12 +69,12 @@ export function Hero() {
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-foreground mb-8 leading-[0.9]">
                     <div className="flex flex-col items-center gap-2">
                         <DecryptedText
-                            text="SELLING"
+                            text={t('selling')}
                             animateOn="view"
                             revealDirection="center"
                             className="text-primary"
                         />
-                        <span className="font-sans font-light tracking-tight text-4xl md:text-6xl opacity-80">HIGH-END PRODUCTS</span>
+                        <span className="font-sans font-light tracking-tight text-4xl md:text-6xl opacity-80">{t('highEndProducts')}</span>
                     </div>
                 </h1>
 
@@ -83,7 +85,7 @@ export function Hero() {
                     transition={{ delay: 0.4, duration: 0.8 }}
                     className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mb-12 leading-relaxed font-light tracking-wide"
                 >
-                    Your trusted partner for premium construction materials and hardware solutions. Operating with excellence for over two decades.
+                    {t('description')}
                 </motion.p>
 
                 <motion.div
@@ -94,13 +96,13 @@ export function Hero() {
                 >
                     <Button asChild size="lg" className="h-16 px-10 text-lg rounded-none skew-x-[-10deg] hover:skew-x-0 transition-transform bg-foreground text-background hover:bg-foreground/90 group">
                         <Link href="/products" className="flex items-center gap-2">
-                            <span className="skew-x-[10deg] group-hover:skew-x-0 transition-transform inline-block">EXPLORE CATALOG</span>
+                            <span className="skew-x-[10deg] group-hover:skew-x-0 transition-transform inline-block">{t('exploreCatalog')}</span>
                             <ArrowRight className="h-5 w-5 skew-x-[10deg] group-hover:skew-x-0 transition-transform" />
                         </Link>
                     </Button>
 
                     <Link href="/contact" className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-mono uppercase tracking-widest border-b border-transparent hover:border-foreground pb-1">
-                        Get a Quote <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        {t('getQuote')} <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                 </motion.div>
             </div>
@@ -112,7 +114,7 @@ export function Hero() {
                 transition={{ delay: 1.5, duration: 1 }}
                 className="absolute bottom-12 left-8 hidden md:flex flex-col gap-4 text-[10px] font-mono text-muted-foreground/30 uppercase tracking-[0.3em] [writing-mode:vertical-rl] rotate-180"
             >
-                <span>Scroll to discover</span>
+                <span>{t('scrollToDiscover')}</span>
                 <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-muted-foreground/30 to-transparent" />
             </motion.div>
         </section>

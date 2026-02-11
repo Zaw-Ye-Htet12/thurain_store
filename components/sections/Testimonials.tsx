@@ -2,40 +2,43 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-
-const testimonials = [
-    {
-        name: "Aung Kyaw",
-        role: "Homeowner",
-        content: "The quality of the hardware tools I bought was exceptional. Delivery was fast and the packaging was secure. Highly recommended!",
-        rating: 5,
-    },
-    {
-        name: "Thandar Soe",
-        role: "Interior Designer",
-        content: "I source most of my decor items from ThuRain. Their collection is unique and modern, perfect for my clients.",
-        rating: 5,
-    },
-    {
-        name: "Myo Min",
-        role: "Contractor",
-        content: "Reliable service and great prices. The bulk ordering process is smooth and the team is very responsive.",
-        rating: 4,
-    },
-    {
-        name: "Hla Hla Win",
-        role: "DIY Enthusiast",
-        content: "Love the variety of products! Found everything I needed for my weekend renovation project.",
-        rating: 5,
-    },
-];
+import { useTranslations } from "next-intl";
 
 export function Testimonials() {
+    const t = useTranslations('Testimonials');
+
+    const testimonials = [
+        {
+            name: "Aung Kyaw",
+            role: t('role.homeowner'),
+            content: t('t1'),
+            rating: 5,
+        },
+        {
+            name: "Thandar Soe",
+            role: t('role.designer'),
+            content: t('t2'),
+            rating: 5,
+        },
+        {
+            name: "Myo Min",
+            role: t('role.contractor'),
+            content: t('t3'),
+            rating: 4,
+        },
+        {
+            name: "Hla Hla Win",
+            role: t('role.diy'),
+            content: t('t4'),
+            rating: 5,
+        },
+    ];
+
     return (
         <section className="py-24 bg-muted/30 overflow-hidden">
-            <div className="container mx-auto px-4 md:px-6 mb-12 text-center">
-                <h2 className="text-3xl font-bold tracking-tight mb-4">Trusted by Professionals & Homeowners</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">Don't just take our word for it. Here is what our community has to say about their experience with ThuRain.</p>
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl mb-12 text-center">
+                <h2 className="text-3xl font-bold tracking-tight mb-4">{t('title')}</h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">{t('desc')}</p>
             </div>
 
             {/* Marquee Effect Container */}

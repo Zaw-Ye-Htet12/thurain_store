@@ -1,17 +1,21 @@
 "use client";
 
 import { Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
+    const t = useTranslations("Footer");
+    const year = new Date().getFullYear();
+
     return (
         <footer className="border-t bg-background">
             <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0 mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                     <Logo showText={false} className="opacity-80 grayscale hover:grayscale-0 transition-all" />
                     <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-                        &copy; 2026 ThuRain Store. All rights reserved.
+                        &copy; {year} ThuRain Store. {t('rights')}
                     </p>
                 </div>
 
