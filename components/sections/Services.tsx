@@ -40,7 +40,7 @@ export function Services() {
                 <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between md:items-end mb-20 gap-8">

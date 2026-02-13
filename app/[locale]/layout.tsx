@@ -9,12 +9,14 @@ import { Footer } from "@/components/layout/Footer";
 import "../globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import SmoothScroller from "@/components/SmoothScroller";
+import StructuredData from "@/components/seo/StructuredData";
+import ChatbaseWidget from '@/components/ChatbaseWidget';
+import type { Metadata } from 'next';
+import { BASE_URL } from '@/lib/constant';
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: '--font-space' });
 
-import type { Metadata } from 'next';
-import { BASE_URL } from '@/lib/constant';
 
 const OGImage = "/og_image.jpg";
 export const metadata: Metadata = {
@@ -64,8 +66,6 @@ export const metadata: Metadata = {
   },
 };
 
-import StructuredData from "@/components/seo/StructuredData";
-
 export default async function LocaleLayout({
   children,
   params
@@ -85,6 +85,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <NextIntlClientProvider messages={messages}>
+          <ChatbaseWidget />
           <StructuredData />
           <ThemeProvider
             attribute="class"

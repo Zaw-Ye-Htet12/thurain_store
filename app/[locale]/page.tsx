@@ -8,6 +8,7 @@ import { Locations } from "@/components/sections/Locations";
 import { Contact } from "@/components/sections/Contact";
 import { VisionMission } from "@/components/sections/VisionMission";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { FAQ } from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <VisionMission />
       <AboutStory />
       <Testimonials />
+      <FAQ />
       <Contact />
     </div>
   );

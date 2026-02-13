@@ -119,6 +119,9 @@
             "email": "Email (Optional)",
             "message": "Message",
             "submit": "Send Request",
+            "sending": "Sending...",
+            "success": "Your message has been sent successfully! We'll get back to you soon.",
+            "error": "Failed to send your message. Please try again or contact us directly.",
             "reply": "Typically replies within 2 hours during business hours.",
             "placeholders": {
                 "name": "John Doe",
@@ -258,5 +261,96 @@
         "Sale": "Sale",
         "Reliable": "Reliable",
         "Heavy Duty": "Heavy Duty"
+    },
+    "FAQ": {
+        "tag": "Got Questions?",
+        "title": "Frequently",
+        "highlight": "Asked",
+        "desc": "Everything you need to know about our products, services, and ordering process.",
+        "moreQuestions": "Still have questions?",
+        "contactUs": "Chat with us on WhatsApp →",
+        "items": {
+            "q1": {
+                "q": "Do you offer bulk pricing for contractors?",
+                "a": "Absolutely! We provide competitive bulk pricing for contractors, builders, and project managers. Contact us directly via WhatsApp or visit our showroom to discuss your project requirements and get a custom quote tailored to your needs."
+            },
+            "q2": {
+                "q": "Are your products genuine and warranty-covered?",
+                "a": "Yes, every product in our catalog is 100% genuine and sourced directly from authorized manufacturers and distributors. Most products come with the manufacturer's original warranty. We never stock counterfeit or substandard goods."
+            },
+            "q3": {
+                "q": "What payment methods do you accept?",
+                "a": "We accept cash payments at our showroom, bank transfers (KBZ, AYA, CB), and mobile payments including KBZ Pay and Wave Money. For bulk orders, we also offer flexible payment arrangements."
+            },
+            "q4": {
+                "q": "Do you provide delivery services?",
+                "a": "We are currently preparing our delivery network to serve you better. For now, pickup is available at both our Thamine and Kyimyindaing branches. For large orders, we can help arrange third-party logistics at competitive rates."
+            },
+            "q5": {
+                "q": "Can I get expert advice on which products to choose?",
+                "a": "Of course! Our experienced team offers free technical consultation for any project — from home renovations to large-scale construction. Just visit our showroom or reach out on WhatsApp, and we will guide you to the right products."
+            },
+            "q6": {
+                "q": "When will the online store be available?",
+                "a": "Our online e-commerce platform is currently in development and expected to launch soon. Join our waitlist to get early access, exclusive launch discounts, and priority notifications when we go live."
+            }
+        }
+    },
+    "AboutPage": {
+        "hero": {
+            "titlePart1": "Selling products, ",
+            "titleHighlight": "building trust",
+            "desc": "Welcome to ThuRain Store — your number one source for all things hardware and home decoration. We're dedicated to giving you the very best of home accessories, plumbing, and appliances, with a focus on quality, customer service, and uniqueness."
+        },
+        "story": {
+            "heading": "Our Story",
+            "quote": "Our passion for high‑quality, reliable home improvement products drove us to do intense research so that we can offer you the world's most advanced home solutions.",
+            "attribution": "The ThuRain Team",
+            "p1": "Founded in Myanmar, ThuRain Store has come a long way from its beginnings. When we first started out, our passion for high-quality, reliable home improvement products drove us to do intense research so that ThuRain Store can offer you the world's most advanced home solutions. We now serve customers all over the country and are thrilled that we're able to turn our passion into our own website.",
+            "p2": "We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.",
+            "stats": {
+                "years": "Years",
+                "products": "Products",
+                "locations": "Locations"
+            }
+        },
+        "values": {
+            "heading": "What We Stand For",
+            "v1": {
+                "title": "Quality First",
+                "desc": "Every product in our store is carefully selected and inspected. We only offer premium-grade materials that meet our high standards — no compromise."
+            },
+            "v2": {
+                "title": "Fair Pricing",
+                "desc": "We believe quality shouldn't break the bank. Our wholesale connections and direct sourcing allow us to pass genuine savings to every customer."
+            },
+            "v3": {
+                "title": "Expert Support",
+                "desc": "Our experienced team is here to help — from choosing the right fittings to technical guidance on materials. Your project is our priority."
+            }
+        },
+        "locations": {
+            "heading": "Visit Us",
+            "thamine": {
+                "name": "Thamine Branch",
+                "badge": "Main",
+                "address": "No. 20, 1st Floor, Thamine Station Street, Mayangone Township, Yangon",
+                "phone1": "09 769 808 227",
+                "phone2": "09 766 533 966"
+            },
+            "bandarpin": {
+                "name": "Ban Dar Pin Branch",
+                "badge": "Branch",
+                "address": "No. 20, 1st Floor, Bandarpin Street, Kyimyindaing Township, Yangon",
+                "phone1": "09 769 808 227"
+            },
+            "googleMaps": "Google Maps"
+        },
+        "cta": {
+            "title": "Ready to start your next project",
+            "desc": "Visit our showroom or get in touch — we'd love to help you find exactly what you need.",
+            "visit": "Visit Showroom",
+            "contact": "Contact Us"
+        }
     }
 }
